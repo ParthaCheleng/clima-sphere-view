@@ -61,6 +61,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				weather: {
+					sunny: '#f59e0b',
+					cloudy: '#64748b',
+					rainy: '#0284c7',
+					snowy: '#94a3b8',
+					stormy: '#475569',
+					foggy: '#cbd5e1'
 				}
 			},
 			borderRadius: {
@@ -84,11 +92,69 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-out': {
+					'0%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					},
+					'100%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					}
+				},
+				'pulse-slow': {
+					'0%, 100%': {
+						opacity: 1
+					},
+					'50%': {
+						opacity: 0.8
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-5px)'
+					}
+				},
+				'spin-slow': {
+					'0%': {
+						transform: 'rotate(0deg)'
+					},
+					'100%': {
+						transform: 'rotate(360deg)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'fade-out': 'fade-out 0.3s ease-out',
+				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'spin-slow': 'spin-slow 8s linear infinite'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'weather-sunny': 'linear-gradient(to bottom right, #fbbf24, #f59e0b)',
+				'weather-cloudy': 'linear-gradient(to bottom right, #94a3b8, #64748b)',
+				'weather-rainy': 'linear-gradient(to bottom right, #38bdf8, #0284c7)',
+				'weather-snowy': 'linear-gradient(to bottom right, #e2e8f0, #94a3b8)',
+				'weather-stormy': 'linear-gradient(to bottom right, #64748b, #475569)',
+				'weather-foggy': 'linear-gradient(to bottom right, #e2e8f0, #cbd5e1)'
 			}
 		}
 	},

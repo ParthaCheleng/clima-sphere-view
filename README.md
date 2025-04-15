@@ -1,73 +1,77 @@
-# Welcome to your Lovable project
+# ClimaSphere - Your Smart Weather Companion
 
-## Project info
+ClimaSphere is a sleek, responsive weather web app that provides real-time weather data and forecasts with intelligent insights. Built with modern web technologies, it offers an intuitive interface for checking current conditions and forecasts.
+
+![ClimaSphere Screenshot](https://lovable.dev/opengraph-image-p98pqg.png)
+
+## Project Info
 
 **URL**: https://lovable.dev/projects/bd448b38-dd9b-41c9-9718-1185e9f2751b
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- 🌦️ **Real-Time Weather**: Current conditions with dynamic visuals
+- 📅 **7-Day Forecast**: Daily summary with icons, highs/lows, and precipitation chances
+- ⏰ **Hourly Forecast**: Interactive chart showing temperature trends
+- 🎨 **Theme Toggle**: Dark/Light mode with persistent settings
+- 🔄 **Weather Provider Switcher**: Choose between OpenWeatherMap and WeatherAPI
+- 📍 **Geolocation Support**: Automatically fetch weather for your current location
+- 📋 **Favorites**: Save cities for quick access
+- 🌈 **Dynamic UI**: Weather-themed gradients and animations
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/bd448b38-dd9b-41c9-9718-1185e9f2751b) and start prompting.
+- **Frontend**: React, TypeScript, Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Charting**: Recharts
+- **Icons**: Lucide React
+- **Build Tool**: Vite
+- **Deployment**: Lovable
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Follow these steps to run the project locally:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Navigate to the project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## API Keys
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+To use the weather APIs, you'll need to sign up for API keys:
 
-**Use GitHub Codespaces**
+- OpenWeatherMap: [Sign up here](https://openweathermap.org/api)
+- WeatherAPI: [Sign up here](https://www.weatherapi.com/)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## How to Use
 
-## What technologies are used for this project?
+1. **Search for a Location**: Use the search bar to find weather by city name
+2. **Get Local Weather**: Click the location pin icon to use your current location
+3. **Save Favorites**: Add cities to your favorites list for quick access
+4. **Change Settings**: Toggle between dark/light mode and customize units
+5. **View Forecasts**: Check daily and hourly forecasts with detailed information
 
-This project is built with:
+## Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+We welcome contributions to ClimaSphere! Please feel free to submit pull requests or open issues for any bugs or feature requests.
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/bd448b38-dd9b-41c9-9718-1185e9f2751b) and click on Share -> Publish.
+This project is open source and available under the MIT license.
 
-## Can I connect a custom domain to my Lovable project?
+## Acknowledgements
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Weather data provided by OpenWeatherMap and WeatherAPI
+- UI components from shadcn/ui
+- Icons from Lucide React
+- Built with Lovable

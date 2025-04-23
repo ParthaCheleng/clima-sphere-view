@@ -1,9 +1,18 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useWeather } from "@/contexts/WeatherContext";
-import { formatTemperature, getHourlyForecastData, getWeatherInfo } from "@/utils/weatherUtils";
-import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
+import {
+  formatTemperature,
+  getHourlyForecastData,
+  getWeatherInfo
+} from "@/utils/weatherUtils";
+import {
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis
+} from "recharts";
 import { CloudRain } from "lucide-react";
 
 export const HourlyForecast = () => {
@@ -24,13 +33,13 @@ export const HourlyForecast = () => {
     );
   }
 
-  if (!weatherData) {
+  if (!weatherData || !weatherData.forecast?.hourly) {
     return null;
   }
 
+  // ✅ Format WeatherAPI hourly data
   const hourlyData = getHourlyForecastData(weatherData.forecast.hourly, units);
 
-  // Custom tooltip for the chart
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
@@ -52,7 +61,7 @@ export const HourlyForecast = () => {
         </div>
       );
     }
-    
+
     return null;
   };
 
@@ -66,16 +75,11 @@ export const HourlyForecast = () => {
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               data={hourlyData}
-              margin={{
-                top: 5,
-                right: 30,
-                left: 0,
-                bottom: 5,
-              }}
+              margin={{ top: 5, right: 30, left: 0, bottom: 5 }}
             >
-              <XAxis 
-                dataKey="time" 
-                tick={{ fontSize: 12 }} 
+              <XAxis
+                dataKey="time"
+                tick={{ fontSize: 12 }}
                 axisLine={false}
                 tickLine={false}
                 padding={{ left: 10, right: 10 }}
@@ -92,17 +96,19 @@ export const HourlyForecast = () => {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        
+
         <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-2 mt-4">
           {hourlyData.map((hour, index) => {
             const weatherInfo = getWeatherInfo(hour.conditionCode);
             const WeatherIcon = weatherInfo.icon;
-            
+
             return (
               <div key={index} className="flex flex-col items-center py-2">
                 <span className="text-xs font-medium">{hour.time}</span>
                 <WeatherIcon className="h-5 w-5 my-1" />
-                <span className="text-xs">{formatTemperature(hour.temperature, units)}</span>
+                <span className="text-xs">
+                  {formatTemperature(hour.temperature, units)}
+                </span>
               </div>
             );
           })}
